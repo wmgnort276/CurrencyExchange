@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">Scrolling Text</string>
+    <string name="app_name">Two Activities</string>
     <string name="article_heading">Article Title</string>
     <string name="article_subheading">Article Subtitle</string>
     <string name="article_text">Some text <b> to enable scrolling.. </b>  www.Youtube.com Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. \n \n Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.Some text to enable scrolling..\n \n Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. \n \n Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus. </string>
+    <string name="button_activity1">Send</string>
+    <string name="editText_main">Enter your message here</string>
+    <string name="second_activity">Second Activity</string>
+    <string name="reply_button">Reply</string>
 </resources>

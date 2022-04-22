@@ -1,54 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/article_heading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:padding="@dimen/padding_regular"
-        android:text="@string/article_heading"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
 
-    <ScrollView
+    <Button
+        android:id="@+id/button_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/article_heading"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        android:onClick="launchSecondActivity"
+        android:text="@string/button_activity1"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/article_subheading"
-                android:padding="@dimen/padding_regular"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault"
-                android:text="@string/article_subheading"
-                />
-
-            <TextView
-                android:id="@+id/article"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autoLink="web"
-                android:lineSpacingExtra="@dimen/line_spacing"
-                android:padding="@dimen/padding_regular"
-                android:text="@string/article_text"
-                android:textSize="@dimen/article_textsize" />
-        </LinearLayout>
-
-
-    </ScrollView>
-
-
-
-</RelativeLayout>
+    <EditText
+        android:id="@+id/editText_main"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:inputType="textLongMessage"
+        android:hint="@string/editText_main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_main"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <TextView
+        android:id="@+id/text_header_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Message Reply"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/text_message_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_header_main" />
+</android.support.constraint.ConstraintLayout>
