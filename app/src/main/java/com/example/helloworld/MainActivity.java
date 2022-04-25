@@ -26,6 +26,65 @@ public class MainActivity extends AppCompatActivity {
         // find object by its id
         mReplyHeadTextView = findViewById(R.id.text_header_main);
         mReplyTextView = findViewById(R.id.text_message_main);
+        // lay du lieu ra khoi bundle
+        if (savedInstanceState != null) {
+            boolean isVisible =
+                    savedInstanceState.getBoolean("reply_visible");
+            if(isVisible){
+                mReplyHeadTextView.setVisibility(View.VISIBLE);
+                mReplyTextView.setText(savedInstanceState.getString("reply_text"));
+                mReplyTextView.setVisibility(View.VISIBLE);
+            }
+        }
+        // for codelab 2.2
+        Log.d(LOG_TAG, "-------");
+        Log.d(LOG_TAG, "onCreate");
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (mReplyHeadTextView.getVisibility() == View.VISIBLE) {
+            outState.putBoolean("reply_visible", true);
+            outState.putString("reply_text",mReplyTextView.getText().toString());
+        }
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(LOG_TAG, "onStart");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(LOG_TAG, "onPause");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(LOG_TAG, "onRestart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(LOG_TAG, "onResume");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(LOG_TAG, "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(LOG_TAG, "onDestroy");
     }
 
     public void launchSecondActivity(View view) {
@@ -33,11 +92,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,SecondActivity.class);
         String message = mMessageEditText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE,message);
-        //dung intent khoi dong second_activity
+        //dung intend    t khoi dong second_activity
         // startActivity(intent); -start activity ma ko can ket qua tra ve
         //neu can ket qua tra ve dung cong thuc ben duoi
         startActivityForResult(intent, TEXT_REQUEST);
     }
+
     @Override
     public void onActivityResult(int requestCode,
                                  int resultCode, Intent data) {
