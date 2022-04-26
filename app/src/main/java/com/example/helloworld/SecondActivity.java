@@ -1,38 +1,21 @@
 package com.example.helloworld;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
     // khoi tao key
-    public static final String EXTRA_REPLY = "com.example.android.twoactivities.extra.REPLY";
-    private EditText mReply;
+   // public static final String EXTRA_REPLY = "com.example.android.twoactivities.extra.REPLY";
+   // private EditText mReply;
     // codelab 2.2
-    private static final String LOG_TAG = SecondActivity.class.getSimpleName();
+   // private static final String LOG_TAG = SecondActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        Intent intent = getIntent();
-        // lay message
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        // lay doi tuong text view tu message
-        TextView textView = findViewById(R.id.text_message);
-        textView.setText(message);
-        mReply = findViewById(R.id.editText_reply);
+
     }
-    public void returnReply(View view){
-        String reply = mReply.getText().toString();
-        Intent intentReply = new Intent();
-        intentReply.putExtra(EXTRA_REPLY,reply);
-        setResult(RESULT_OK,intentReply);
-        Log.d(LOG_TAG, "End SecondActivity");
-        finish();
-    }
+
+
 }
