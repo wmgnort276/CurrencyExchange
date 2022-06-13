@@ -71,6 +71,7 @@
             android:clickable="true"
             android:focusable="true"
             android:button="@drawable/check"
+
             />
 
     </LinearLayout>
